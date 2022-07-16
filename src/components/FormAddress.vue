@@ -1,7 +1,7 @@
 <template>
   <div style="display: contents">
       <!-- 表單第一部分 -->
-      <div class="form-section" v-show="currentStep === 1">
+      <div class="form-section">
         <h3 class="title col-sm-1-13">寄送地址</h3>
         <div class="col-sm-1-6 col-lg-1-5">
           <label for="select-title">稱謂</label>
@@ -41,6 +41,9 @@
           <label for="input-city">縣市</label>
           <select name="input-city" id="input-city">
             <option value="null" selected disabled hidden>請選擇縣市</option>
+            <option v-for="city in cities" :key="city.id" :value="city.name">
+              {{ city.name }}
+            </option>
           </select>
         </div>
         <div class="col-sm-1-13 col-lg-5-13">
@@ -57,11 +60,38 @@
 </template>
 
 <script>
+const dummyCities = [
+  {
+    id: 1,
+    name: '台北市'
+  },
+  {
+    id: 2,
+    name: '新北市'
+  },
+  {
+    id: 3,
+    name: '台中市'
+  },
+  {
+    id: 4,
+    name: '台南市'
+  },
+  {
+    id: 5,
+    name: '高雄市'
+  }
+]
+
 export default {
+  name: 'FormAddress',
   data () {
     return {
-      currentStep: 1
+      cities: []
     }
+  },
+  created () {
+    this.cities = dummyCities
   }
 }
 </script>

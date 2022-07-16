@@ -37,9 +37,10 @@
 
 <script>
 export default {
+  name: 'FormShipping',
   data () {
     return {
-      currentStep: 1
+
     }
   }
 }

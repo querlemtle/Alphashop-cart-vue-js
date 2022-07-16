@@ -8,11 +8,11 @@ const routes = [
   {
     path: '/',
     name: 'root',
-    redirect: '/checkout/1'
+    redirect: '/checkout'
   },
   {
-    path: '/checkout/1',
-    name: 'checkout-address',
+    path: '/checkout',
+    name: 'checkout',
     component: () => import('../views/Checkout.vue')
   },
   {
@@ -20,11 +20,6 @@ const routes = [
     name: 'not-found',
     component: NotFound
   }
-  // {
-  //   path: '/checkout/:step',
-  //   name: 'checkout-step',
-  //   component: () => import('../views/Checkout.vue')
-  // }
 ]
 
 const router = new VueRouter({

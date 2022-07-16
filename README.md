@@ -1,4 +1,4 @@
-# forum-front-end-vue
+# Alphashop-cart-vue-js
 
 ## Project setup
 ```

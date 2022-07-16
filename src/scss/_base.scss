@@ -82,3 +82,21 @@ footer {
     "form cart"
     "button cart";
 }
+
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 1110px;
+  }
+
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    grid-template-areas:
+    "title title"
+    "progress cart"
+    "form cart"
+    "button cart";
+  }
+}  

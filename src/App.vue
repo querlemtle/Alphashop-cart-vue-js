@@ -8,7 +8,8 @@
   </div>
 </template>
 
-<style src='./css/main.css'>
+<style lang="scss">
+@import './scss/main.scss'
 </style>
 
 <script>
