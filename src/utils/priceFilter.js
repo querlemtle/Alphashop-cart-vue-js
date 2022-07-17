@@ -1,7 +1,6 @@
 export const priceFilter = {
   filters: {
     formatPrice (price) {
-      if (!price) return
       if (price === 0) {
         return '免費'
       } else {
