@@ -1,5 +1,5 @@
 <template>
-  <div style="display: contents">
+  <footer>
     <img src="./../assets/logo@2x.png" alt="logo" class="logo" />
     <nav class="footer-nav">
       <ul class="footer-nav-list">
@@ -64,7 +64,5 @@
         </li>
       </ul>
     </nav>
-  </div>
+  </footer>
 </template>
-
-<style scoped></style>

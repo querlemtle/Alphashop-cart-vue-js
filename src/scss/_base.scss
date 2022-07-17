@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -44,11 +46,6 @@ img {
   display: block;
 }
 
-.container {
-  width: 95%;
-  margin: 0 auto;
-}
-
 header,
 main,
 section,
@@ -61,14 +58,14 @@ main,
 section,
 footer {
   width: 100%;
+}
+
+.d-none {
+  display: none;
 }
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.container {
-  max-width: 1110px;
 }
 
 .main {
@@ -84,10 +81,6 @@ footer {
 }
 
 @media screen and (min-width: 375px) {
-  .container {
-    max-width: 1110px;
-  }
-
   .main {
     width: 100%;
     display: grid;

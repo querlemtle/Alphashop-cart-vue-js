@@ -2,21 +2,20 @@ footer {
   display: none;
 }
 
+// @media screen and (min-width: 375px) {
+//   footer {
+//     display: grid;
+//     grid-template-columns: 25% 75%;
+//     align-items: center;
+//     background-color: $footer-gray;
+//   }
 
-@media screen and (min-width: 375px) {
-  footer {
-    display: grid;
-    grid-template-columns: 25% 75%;
-    align-items: center;
-    background-color: $footer-gray;
-  }
-
-  .footer-nav {
-    margin: 64px;
-    display: grid;
-    grid-template-columns: repeat(4, 200px);
-    .icon-container {
-      margin: 0;
-    }
-  }
-}  
+//   .footer-nav {
+//     margin: 64px;
+//     display: grid;
+//     grid-template-columns: repeat(4, 200px);
+//     .icon-container {
+//       margin: 0;
+//     }
+//   }
+// }  

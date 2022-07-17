@@ -16,7 +16,7 @@
 
     <div class="info-panel">
       <p class="info-title">運費</p>
-      <p class="info-text">免費</p>
+      <p class="info-text">{{ initialShippingFee | formatPrice }}</p>
     </div>
     <div class="info-panel">
       <p class="info-title">小計</p>
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { priceFilter } from '../utils/priceFilter'
+
 const dummyProducts = [
   {
     id: 1,
@@ -45,13 +47,23 @@ const dummyProducts = [
 
 export default {
   name: 'Cart',
+  props: {
+    // 從 Checkout.vue 接收的 FormShippingFee
+    initialShippingFee: {
+      type: Number,
+      required: true
+    }
+  },
+  mixins: [priceFilter],
   data () {
     return {
-      cartsItem: []
+      cartsItem: [],
+      shippingFee: 0
     }
   },
   created () {
     this.cartsItem = dummyProducts
+    this.shippingFee = this.initialShippingFee
   },
   methods: {
     increaseAmount (product) {
@@ -60,18 +72,6 @@ export default {
     decreaseAmount (product) {
       if (product.amount <= 1) return
       product.amount--
-    }
-  },
-  filters: {
-    // 將每項商品價格開頭加上[$]，從末尾往前數第三格之前加上[,]
-    formatPrice (price) {
-      if (!price) return
-      price = price.toString()
-      const formattedPrice = '$' + price.slice(0, price.length - 3) + ',' + price.slice(-3)
-      return formattedPrice
-    },
-    formatShippingFee (price) {
-      return price === 0 ? '免費' : price
     }
   },
   computed: {
