@@ -7,7 +7,7 @@
       <select
       name="input-name"
       id="select-title"
-      v-model="formAddress.title"
+      v-model="defaultSelected"
       >
         <option value="null" selected disabled hidden>請選擇稱謂</option>
         <option v-for="title in titles" :key="title.id" :value="title.name">
@@ -50,7 +50,7 @@
       <select
       name="input-city"
       id="input-city"
-      v-model="formAddress.city"
+      v-model="defaultSelected"
       >
         <option value="null" selected disabled hidden>請選擇縣市</option>
         <option v-for="city in cities" :key="city.id" :value="city.name">
@@ -87,6 +87,7 @@ const dummySelectOptions = {
       name: '其他'
     }
   ],
+  defaultSelectedTitle: null,
   cities: [
     {
       id: 1,
@@ -108,7 +109,8 @@ const dummySelectOptions = {
       id: 5,
       name: '高雄市'
     }
-  ]
+  ],
+  defaultSelectedCities: null
 }
 
 export default {
@@ -117,6 +119,7 @@ export default {
     return {
       cities: [],
       titles: [],
+      defaultSelected: null,
       formAddress: {
         title: '',
         name: '',

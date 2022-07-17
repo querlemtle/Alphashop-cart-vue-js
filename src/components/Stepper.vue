@@ -1,5 +1,5 @@
 <template>
-  <div style="display: content">
+  <div style="display: contents;">
     <h3 class="title title-lg col-12">結帳</h3>
     <div class="progress">
       <div class="stepper-wrapper col-12">
