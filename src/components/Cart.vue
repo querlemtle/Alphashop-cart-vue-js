@@ -76,9 +76,9 @@ export default {
   },
   computed: {
     getTotalPrice: function () {
-      let total = 0
+      let total = this.initialShippingFee
       for (const item of this.cartsItem) {
-        total = total + item.price * item.amount
+        total += item.price * item.amount
       }
       return total
     }
