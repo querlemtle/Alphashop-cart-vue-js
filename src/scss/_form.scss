@@ -74,10 +74,14 @@ form {
 @media screen and (min-width: 375px) {
   form {
     grid-area: form;
-    height: 400px;
   }
 
   .form-section {
     @include setGridCols(lg,13);
+    height: 400px;
+  }
+
+  .radio-option {
+    height: 5rem;
   }
 }  

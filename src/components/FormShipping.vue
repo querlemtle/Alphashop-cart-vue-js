@@ -12,7 +12,8 @@
         name="input-transportation"
         id="input-transportation"
         class="input-radio"
-        :class="{ checked: option.checked }"
+        :value="option.value"
+        v-model="checkedOption"
         @change="handleRadioChanged(option.price)"
       />
       <div class="option-title">
@@ -30,6 +31,7 @@ import { priceFilter } from '../utils/priceFilter'
 const dummyOptions = [
   {
     name: '標準運送',
+    value: 'free',
     id: 1,
     duration: '約 3~7 個工作天',
     price: 0,
@@ -37,6 +39,7 @@ const dummyOptions = [
   },
   {
     name: 'DHL 貨運',
+    value: '500',
     id: 2,
     duration: '48 小時內送達',
     price: 500,
@@ -49,7 +52,8 @@ export default {
   mixins: [priceFilter],
   data () {
     return {
-      options: []
+      options: [],
+      checkedOption: 'free'
     }
   },
   created () {
